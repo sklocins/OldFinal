@@ -125,32 +125,24 @@ function bestMove(){
         }
     }
 }
+document.addEventListener('DOMContentLoaded', function() {
+    // Your JavaScript code here
+    const board = document.querySelector('.board'); // Get the board container
 
-    // const wins = []
-    // for (let win of wins) {
-    // if(xlist.includes(4)){
+    document.getElementById('reset-button').addEventListener('click', function() {
+        xlist.length = 0;
+        olist.length = 0;
+        const squares = document.querySelectorAll('.square');
+        squares.forEach(square => {
+            square.textContent = '';
+        });
+        XorO = "X";
+        document.querySelector('.message').innerText = 'Welcome!';
+    });
 
-    // }
+    document.getElementById('toggle-classic').addEventListener('click', function() {
+        board.classList.toggle('alternate-styling');
+        main.classList.toggle('alternate-bg-color');
+    });
+});
 
-// function checkGame() {
-//     const wins = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6] ]
-//     for (let win of wins) {
-//         if (win.every(element => xlist.includes(element))){
-//             console.log('X WINS')
-//             const squareWin = document.getElementsByClassName('square')[4];
-//             squareWin.innerText = "X WINS"
-
-//         }
-//         if (win.every(element => olist.includes(element))){
-//             console.log('O WINS')
-//             const squareWin = document.getElementsByClassName('square')[4];
-//             squareWin.innerText = "O WINS"
-//         }
-//         else if (xlist.length + olist.length == 9){
-//             console.log('TIE')
-//             const squareWin = document.getElementsByClassName('square')[4];
-//             squareWin.innerText = "TIE"
-//         }
-//         // check for draw
-//     }
-// }
